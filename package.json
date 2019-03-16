@@ -1,30 +1,25 @@
 {
   "name": "react-avengers-gallery",
-  "version": "1.0.0",
-  "description": "An application to view images of Earth's Mightiest Heros, The Avengers.  This program was created using React, JavaScript, JSX and Flickr's API.  ",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/BillyRyanShelton/react-avengers-gallery.git"
-  },
-  "keywords": [
-    "React",
-    "Avengers",
-    "JavaScript",
-    "JSX",
-    "Flickr"
-  ],
-  "author": "Billy Shelton",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/BillyRyanShelton/react-avengers-gallery/issues"
-  },
-  "homepage": "https://github.com/BillyRyanShelton/react-avengers-gallery#readme",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
-    "axios": "^0.18.0",
-    "gh-pages": "^2.0.1"
-  }
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4",
+    "react-scripts": "2.1.8"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
