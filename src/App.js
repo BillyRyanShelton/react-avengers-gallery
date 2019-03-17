@@ -49,20 +49,22 @@ class Gallery extends React.Component{
 class AvengerLinks extends React.Component {
   render() {
     return (
-    <ul className="main-nav">
-      <li><NavLink to="/ironman">Iron Man</NavLink></li>
-      <li><NavLink to="/hulk">Hulk</NavLink></li>
-      <li><NavLink to="/captainamerica">Captain America</NavLink></li>
-      <li><NavLink to="/thor">Thor</NavLink></li>
-      <li><NavLink to="/antman">Ant Man</NavLink></li>
-      <li><NavLink to="/blackpanther">Black Panther</NavLink></li>
-      <li><NavLink to="/captainmarvel">Captain Marvel</NavLink></li>
-      <li><NavLink to="/spiderman">Spiderman</NavLink></li>
-      <li><NavLink to="/doctorstrange">Doctor Strange</NavLink></li>
-      <li><NavLink to="/blackwidow">Black Widow</NavLink></li>
-      <li><NavLink to="/hawkeye">Hawkeye</NavLink></li>
-      <li><NavLink to="/nickfury">Nick Fury</NavLink></li>
-    </ul>    
+    <nav class="main-nav">
+      <ul>
+        <li><NavLink to="/ironman">Iron Man</NavLink></li>
+        <li><NavLink to="/hulk">Incredible Hulk </NavLink></li>
+        <li><NavLink to="/captainamerica">Captain America</NavLink></li>
+        <li><NavLink to="/thor">The Mighty Thor</NavLink></li>
+        <li><NavLink to="/antman">Ant Man</NavLink></li>
+        <li><NavLink to="/blackpanther">Black Panther</NavLink></li>
+        <li><NavLink to="/captainmarvel">Captain Marvel</NavLink></li>
+        <li><NavLink to="/spiderman">Incredible Spiderman</NavLink></li>
+        <li><NavLink to="/doctorstrange">Doctor Strange</NavLink></li>
+        <li><NavLink to="/blackwidow">Black Widow</NavLink></li>
+        <li><NavLink to="/hawkeye">Hawkeye</NavLink></li>
+        <li><NavLink to="/nickfury">Nick Fury</NavLink></li>
+      </ul>    
+    </nav>
     );
   }
 }
