@@ -1,8 +1,7 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 
-const nav = () => (
-    
-);
+const Nav = (props) => {
+    return 
+}
 
-export default nav;
+export default Nav;

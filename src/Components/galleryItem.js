@@ -1,7 +1,7 @@
 import React from 'react';
 
-const gallery-item = props => (
+const GalleryItem = (props) => {
+  return
+}
 
-);
-
-export default gallery-item;
+export default GalleryItem;
