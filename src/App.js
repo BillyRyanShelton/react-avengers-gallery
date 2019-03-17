@@ -32,10 +32,10 @@ class Gallery extends React.Component{
       images = data.map( () => <GalleryItem/>
       );
     } else {
-      images = <h1> No Results Found! </h1>
+      images = <h1 className="not-found"> No Results Found! </h1>
     }
     return (
-      <div>
+      <div className="photo-container">
         <GalleryTitle/>
         <ul> 
           {images} 
@@ -95,13 +95,15 @@ class App extends React.Component {
   } 
   render() {
     return (
-      <div>
-        <BrowserRouter>
-          <SearchForm/>
-          <AvengerLinks/>
-          <Gallery data={this.state.images} title={this.state.title}/>
-        </BrowserRouter>
-      </div>
+      <BrowserRouter>
+        <body>
+          <div className="container">
+            <SearchForm/>
+            <AvengerLinks/>
+            <Gallery data={this.state.images} title={this.state.title}/>
+          </div>
+        </body>
+      </BrowserRouter>
     );
   }
 }
