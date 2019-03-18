@@ -99,9 +99,13 @@ input {
 
 .photo-container .not-found {
   width: 100%;
-  color: #eee;
+  color: #fff;
 }
 
+ .title {
+  width: 100%;
+  color: #fff;
+ }
 
 @media only screen and (max-width: 767px)  {
   body {
@@ -132,4 +136,5 @@ input {
     margin: 10px;
     width: 100px;
   }
+
 }

@@ -6,11 +6,11 @@ import axios from 'axios';
 
 class GalleryItem extends Component{
   render() {
-    let url  = this.props.url;
+    let url = this.props.url;
     return (
-      <div> 
-        { url }
-      </div>
+      <li className="gif-wrap">
+        <img src={url} alt=""/>
+      </li>
     );
   }
 }
@@ -19,7 +19,7 @@ class GalleryTitle extends Component{
   render() {
     let title = this.props.title;
     return (
-      <h1>
+      <h1 className='title'>
         {title}
       </h1>
     );
@@ -32,7 +32,8 @@ class Gallery extends Component{
     let title = this.props.title;
     let images;
     if(data.length > 0) {
-      images = data.map( () => <GalleryItem/>
+      images = data.map( (image) => 
+        <GalleryItem url={`https://farm${image.farm}.staticflickr.com/${image.server}/${image.id}_${image.secret}.jpg`} />
       );
     } else {
       images = <h1 className="not-found"> No Results Found! </h1>
@@ -84,14 +85,14 @@ class SearchForm extends Component {
 
   submitHandler = (event) => {
     event.preventDefault();
-    this.props.newSearch(this.query.value);
+    this.props.onSearch(this.query.value);
     event.currentTarget.reset();
   }
 
   render() {
     return (
       <form className="search-form" onSubmit={this.submitHandler}>
-        <input type="search" onChange={this.newSearch} name="search" ref={(input) => this.query =input}placeholder="Search Your Hero" required/>
+        <input type="search" onChange={this.newSearch} name="search" ref={(input) => this.query=input} placeholder="Search Your Hero" required/>
         <button type="submit" className="search-button">
           <svg fill="#fff" height="24" viewBox="0 0 23 23" width="24" xmlns="http://www.w3.org/2000/svg">
             <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
@@ -115,11 +116,11 @@ class App extends Component {
   } 
 
   performSearch = (query = 'Marvel') => {
-    let key = apiKey;
-    axios.get(`https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key={apiKey}&tags={query}&per_page=24&format=json&nojsoncallback=1`).then(response => {
+    axios.get(`https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${query}&per_page=24&format=json&nojsoncallback=1`).then((response) => {
       this.setState({
-        images: response.data.data,
-        loading: false
+        images: response.data.photos.photo,
+        loading: false,
+        title: query
       });
     })
     .catch(error => {
