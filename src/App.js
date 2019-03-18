@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, NavLink } from 'react-router-dom';
+import {apiKey} from './config';
+import axios from 'axios';
 
 
 class GalleryItem extends Component{
@@ -95,6 +97,21 @@ class App extends Component {
       title: ''
     };
   } 
+
+  performSearch = (query = 'marvel') => {
+    let key = apiKey;
+    axios.get(`https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key={apiKey}&tags=marvel&per_page=24&format=json&nojsoncallback=1`).then(response => {
+      this.setState({
+        images: response.data.data,
+        loading: false
+      });
+    })
+    .catch(error => {
+      console.log('Error fetching and parsing data.', error);
+    }); 
+  }
+
+
   render() {
     return (
       <BrowserRouter>
