@@ -51,21 +51,27 @@ class Gallery extends Component{
 
 
 class AvengerLinks extends Component {
+
+  submitHandler(event, name) {
+    event.preventDefault();
+    this.props.onClick(name);
+  }
+
   render() {
     return (
     <nav className="main-nav">
       <ul>
-        <li><NavLink to="/ironman">Iron Man</NavLink></li>
-        <li><NavLink to="/hulk">Incredible Hulk </NavLink></li>
-        <li><NavLink to="/captainamerica">Captain America</NavLink></li>
-        <li><NavLink to="/thor">Mighty Thor</NavLink></li>
-        <li><NavLink to="/antman">Ant Man</NavLink></li>
-        <li><NavLink to="/blackpanther">Black Panther</NavLink></li>
-        <li><NavLink to="/captainmarvel">Captain Marvel</NavLink></li>
-        <li><NavLink to="/spiderman">Incredible Spiderman</NavLink></li>
-        <li><NavLink to="/doctorstrange">Doctor Strange</NavLink></li>
-        <li><NavLink to="/blackwidow">Black Widow</NavLink></li>
-        <li><NavLink to="/hawkeye">Hawkeye</NavLink></li>
+        <li><NavLink to="/ironman" onClick={(e)=>{this.submitHandler(e, 'Iron Man')}}>Iron Man</NavLink></li>
+        <li><NavLink to="/hulk" onClick={(e)=>{this.submitHandler(e, 'Incredible Hulk')}}>Incredible Hulk </NavLink></li>
+        <li><NavLink to="/captainamerica" onClick={(e)=>{this.submitHandler(e, 'Captain America')}}>Captain America</NavLink></li>
+        <li><NavLink to="/thor" onClick={(e)=>{this.submitHandler(e, 'The Mighty Thor')}}>Mighty Thor</NavLink></li>
+        <li><NavLink to="/antman" onClick={(e)=>{this.submitHandler(e, 'Ant Man')}}>Ant Man</NavLink></li>
+        <li><NavLink to="/blackpanther" onClick={(e)=>{this.submitHandler(e, 'Black Panther')}}>Black Panther</NavLink></li>
+        <li><NavLink to="/captainmarvel" onClick={(e)=>{this.submitHandler(e, 'Captain Marvel')}}>Captain Marvel</NavLink></li>
+        <li><NavLink to="/spiderman" onClick={(e)=>{this.submitHandler(e, 'Peter Parker')}}>Incredible Spiderman</NavLink></li>
+        <li><NavLink to="/doctorstrange" onClick={(e)=>{this.submitHandler(e, 'Doctor Strange')}}>Doctor Strange</NavLink></li>
+        <li><NavLink to="/blackwidow" onClick={(e)=>{this.submitHandler(e, 'Black Widow')}}>Black Widow</NavLink></li>
+        <li><NavLink to="/hawkeye" onClick={(e)=>{this.submitHandler(e, 'Hawkeye')}}>Hawkeye</NavLink></li>
       </ul>    
     </nav>
     );
@@ -119,7 +125,8 @@ class App extends Component {
   }
 
   performSearch = (query = 'Marvel') => {
-    axios.get(`https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${query}&sort=relevance&per_page=24&format=json&nojsoncallback=1`).then((response) => {
+    query = query.replace(/' '/g, '%20');
+    axios.get(`https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${query}&sort=relevance&per_page=24&page=1&format=json&nojsoncallback=1`).then((response) => {
       this.setState({
         images: response.data.photos.photo,
         loading: false,
@@ -137,7 +144,7 @@ class App extends Component {
       <BrowserRouter>
         <div className="container">
           <SearchForm onSearch={this.performSearch}/>
-          <AvengerLinks/>
+          <AvengerLinks onClick={this.performSearch}/>
           <Gallery data={this.state.images} title={this.state.title}/>
         </div>
       </BrowserRouter>
