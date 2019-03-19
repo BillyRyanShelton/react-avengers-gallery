@@ -1,6 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+@import url('https://fonts.googleapis.com/css?family=Cabin');
+
 body {
   text-align: center;
-  font-family: 'Open Sans', sans-serif;
+  /*font-family: 'Open Sans', sans-serif;*/
+  /*font-family: 'Cabin', sans-serif;*/
+  font-family: 'Lobster', cursive;
   color: #3f4850;
 }
 
@@ -85,6 +90,7 @@ input {
   height: 165px;
   overflow: hidden;
   margin-bottom: 15px;
+  border-radius: 10px;
 }
 
 .photo-container ul img {
@@ -105,6 +111,7 @@ input {
  .title {
   width: 100%;
   color: #fff;
+  font-family: 'Lobster', cursive;
  }
 
 @media only screen and (max-width: 767px)  {

@@ -66,7 +66,6 @@ class AvengerLinks extends Component {
         <li><NavLink to="/doctorstrange">Doctor Strange</NavLink></li>
         <li><NavLink to="/blackwidow">Black Widow</NavLink></li>
         <li><NavLink to="/hawkeye">Hawkeye</NavLink></li>
-        <li><NavLink to="/nickfury">Nick Fury</NavLink></li>
       </ul>    
     </nav>
     );
@@ -115,8 +114,12 @@ class App extends Component {
     };
   } 
 
+  componentDidMount() {
+    this.performSearch();
+  }
+
   performSearch = (query = 'Marvel') => {
-    axios.get(`https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${query}&per_page=24&format=json&nojsoncallback=1`).then((response) => {
+    axios.get(`https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${query}&sort=relevance&per_page=24&format=json&nojsoncallback=1`).then((response) => {
       this.setState({
         images: response.data.photos.photo,
         loading: false,
