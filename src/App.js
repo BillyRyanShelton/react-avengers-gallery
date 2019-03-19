@@ -53,7 +53,6 @@ class Gallery extends Component{
 class AvengerLinks extends Component {
 
   submitHandler(event, name) {
-    event.preventDefault();
     this.props.onClick(name);
   }
 
