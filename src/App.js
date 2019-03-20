@@ -7,7 +7,6 @@ import axios from 'axios';
 class GalleryItem extends Component{
   render() {
     let url = this.props.url;
-    let blah = () => {window.open(url);};
     return (
       <li className="gif-wrap">
         <img src={url} alt="" onClick={()=> window.open(url)} />
@@ -30,7 +29,6 @@ class GalleryTitle extends Component{
 class Gallery extends Component{
   render() {
     let data = this.props.data;
-    let title = this.props.title;
     let images;
     if(data.length > 0) {
       images = data.map( (image) => 
@@ -52,6 +50,11 @@ class Gallery extends Component{
 
 
 class AvengerLinks extends Component {
+
+  submitHandler(e, name) {
+    
+    this.props.onClick(name);
+  }
 
   render() {
     return (
@@ -139,7 +142,7 @@ class AvengerPage extends Component {
     return (
           <div className="container">
             <SearchForm onSearch={this.performSearch}/>
-            <AvengerLinks onClick={this.perfromSearch}/>
+            <AvengerLinks onClick={this.performSearch}/>
             <Gallery data={this.state.images} title={this.state.title}/>
           </div>
     );
