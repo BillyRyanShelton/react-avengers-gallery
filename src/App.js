@@ -37,7 +37,7 @@ class Gallery extends Component{
         <GalleryItem url={`https://farm${image.farm}.staticflickr.com/${image.server}/${image.id}_${image.secret}.jpg`} />
       );
     } else {
-      images = <h1 className="not-found"> No Results Found! </h1>
+      images = <h1 className="not-found"> Loading.... </h1>
     }
     return (
       <div className="photo-container">
