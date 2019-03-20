@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route, NavLink } from 'react-router-dom';
+import { BrowserRouter, Route, NavLink, Switch } from 'react-router-dom';
 import {apiKey} from './config';
 import axios from 'axios';
 
@@ -7,9 +7,10 @@ import axios from 'axios';
 class GalleryItem extends Component{
   render() {
     let url = this.props.url;
+    let blah = () => {window.open(url);};
     return (
       <li className="gif-wrap">
-        <img src={url} alt=""/>
+        <img src={url} alt="" onClick={()=> window.open(url)} />
       </li>
     );
   }
@@ -51,10 +52,6 @@ class Gallery extends Component{
 
 
 class AvengerLinks extends Component {
-
-  submitHandler(event, name) {
-    this.props.onClick(name);
-  }
 
   render() {
     return (
@@ -108,22 +105,22 @@ class SearchForm extends Component {
   }
 }
 
-class App extends Component {
 
+class AvengerPage extends Component {
   constructor() {
     super();
     this.state = {
       images: [],
       loading: true,
-      title:'Marvel'
-    };
-  } 
+      title:''
+    }
+  }
 
   componentDidMount() {
     this.performSearch();
   }
 
-  performSearch = (query = 'Marvel') => {
+  performSearch = (query = this.props.searchTopic) => {
     query = query.replace(/' '/g, '%20');
     axios.get(`https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${query}&sort=relevance&per_page=24&page=1&format=json&nojsoncallback=1`).then((response) => {
       this.setState({
@@ -140,15 +137,37 @@ class App extends Component {
 
   render() {
     return (
-      <BrowserRouter>
-        <div className="container">
-          <SearchForm onSearch={this.performSearch}/>
-          <AvengerLinks onClick={this.performSearch}/>
-          <Gallery data={this.state.images} title={this.state.title}/>
-        </div>
-      </BrowserRouter>
+          <div className="container">
+            <SearchForm onSearch={this.performSearch}/>
+            <AvengerLinks onClick={this.perfromSearch}/>
+            <Gallery data={this.state.images} title={this.state.title}/>
+          </div>
     );
   }
 }
 
+
+class App extends Component {
+  render() {
+    return(
+      <BrowserRouter>
+        <Switch>
+          <Route exact path='/' render={() => <AvengerPage searchTopic='Marvel'/>}/>
+          <Route exact path='/ironman' render={() => <AvengerPage searchTopic='Iron Man'/>}/>
+          <Route exact path='/hulk' render={() => <AvengerPage searchTopic='Incredible Hulk'/>}/>
+          <Route exact path='/captainamerica' render={() => <AvengerPage searchTopic='Captain America'/>}/>
+          <Route exact path='/thor' render={() => <AvengerPage searchTopic='Thor'/>}/>
+          <Route exact path='/antman' render={() => <AvengerPage searchTopic='Ant Man'/>}/>
+          <Route exact path='/blackpanther' render={() => <AvengerPage searchTopic='Black Panther'/>}/>
+          <Route exact path='/captainmarvel' render={() => <AvengerPage searchTopic='Captain Marvel'/>}/>
+          <Route exact path='/spiderman' render={() => <AvengerPage searchTopic='Spiderman'/>}/>
+          <Route exact path='/doctorstrange' render={() => <AvengerPage searchTopic='Doctor Strange'/>}/>
+          <Route exact path='/blackwidow' render={() => <AvengerPage searchTopic='Black Widow'/>}/>
+          <Route exact path='/hawkeye' render={() => <AvengerPage searchTopic='Hawkeye'/>}/>
+          <Route render={() => <AvengerPage searchTopic='404 Not Found'/>}/>
+        </Switch>
+      </BrowserRouter>
+    );
+  }
+}
 export default App
