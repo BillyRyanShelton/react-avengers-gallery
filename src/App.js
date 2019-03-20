@@ -9,7 +9,7 @@ class GalleryItem extends Component{
     let url = this.props.url;
     return (
       <li className="gif-wrap">
-        <img src={url} alt="" onClick={()=> window.open(url)} />
+        <img src={url} onClick={()=> window.open(url)} />
       </li>
     );
   }
@@ -32,10 +32,10 @@ class Gallery extends Component{
     let images;
     if(data.length > 0) {
       images = data.map( (image) => 
-        <GalleryItem url={`https://farm${image.farm}.staticflickr.com/${image.server}/${image.id}_${image.secret}.jpg`} />
+        <GalleryItem url={`https://farm${image.farm}.staticflickr.com/${image.server}/${image.id}_${image.secret}.jpg`} key={image.id}/>
       );
     } else {
-      images = <h1 className="not-found"> Loading.... </h1>
+      images = <h1 className="not-found"> Not Found </h1>
     }
     return (
       <div className="photo-container">
@@ -63,7 +63,7 @@ class AvengerLinks extends Component {
         <li><NavLink to="/ironman" onClick={(e)=>{this.submitHandler(e, 'Iron Man')}}>Iron Man</NavLink></li>
         <li><NavLink to="/hulk" onClick={(e)=>{this.submitHandler(e, 'Incredible Hulk')}}>Incredible Hulk </NavLink></li>
         <li><NavLink to="/captainamerica" onClick={(e)=>{this.submitHandler(e, 'Captain America')}}>Captain America</NavLink></li>
-        <li><NavLink to="/thor" onClick={(e)=>{this.submitHandler(e, 'The Mighty Thor')}}>Mighty Thor</NavLink></li>
+        <li><NavLink to="/thor" onClick={(e)=>{this.submitHandler(e, 'Thor Odinson')}}>Thor Odinson</NavLink></li>
         <li><NavLink to="/antman" onClick={(e)=>{this.submitHandler(e, 'Ant Man')}}>Ant Man</NavLink></li>
         <li><NavLink to="/blackpanther" onClick={(e)=>{this.submitHandler(e, 'Black Panther')}}>Black Panther</NavLink></li>
         <li><NavLink to="/captainmarvel" onClick={(e)=>{this.submitHandler(e, 'Captain Marvel')}}>Captain Marvel</NavLink></li>
