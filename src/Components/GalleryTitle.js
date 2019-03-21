@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 
 class GalleryTitle extends Component{
+
+  //The title is rendered to the DOM
   render() {
     let title = this.props.title;
     return (

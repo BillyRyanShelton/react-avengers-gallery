@@ -4,11 +4,12 @@ import { NavLink} from 'react-router-dom';
 
 class AvengerLinks extends Component {
 
+  //When a hero link is clicked, the hero name is sent to the perfromSearch function to change state and re-render the gallery
   submitHandler(e, name) {
-    
     this.props.onClick(name);
   }
 
+  //The nav links are rendered to the DOM
   render() {
     return (
     <nav className="main-nav">

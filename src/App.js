@@ -3,6 +3,8 @@ import { BrowserRouter, Route, NavLink, Switch } from 'react-router-dom';
 import axios from 'axios';
 import AvengerPage from './Components/AvengerPage';
 
+
+//This component handles all the primary page routes when typed into the url.  When a specific route is called the AvengerPage is rendered.
 class App extends Component {
   render() {
     return(
