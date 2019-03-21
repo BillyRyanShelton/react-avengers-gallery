@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "fc75a56eec42f2f3c6ea",
+    "revision": "69f0006d2c72790342ef",
     "url": "/react-avengers-gallery/static/css/main.edce91df.chunk.css"
   },
   {
-    "revision": "fc75a56eec42f2f3c6ea",
-    "url": "/react-avengers-gallery/static/js/main.4f5fdc9d.chunk.js"
+    "revision": "69f0006d2c72790342ef",
+    "url": "/react-avengers-gallery/static/js/main.22315aa7.chunk.js"
   },
   {
     "revision": "e9cdd16e852b73087077",
@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/react-avengers-gallery/static/js/2.705836fd.chunk.js"
   },
   {
-    "revision": "dd1d845217eb7dc0d1f42e2b6f8737f1",
+    "revision": "b40d783bb1a28bada54d2d218bcbcd83",
     "url": "/react-avengers-gallery/index.html"
   }
 ];
