@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/react-avengers-gallery/precache-manifest.49079b486a1bd9fa0a6a257f17bee46f.js"
+  "/react-avengers-gallery/precache-manifest.0ca0bccc8c9c5db3ee5dc16129578ab3.js"
 );
 
 workbox.clientsClaim();

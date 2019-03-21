@@ -7,7 +7,7 @@ class GalleryItem extends Component{
     let url = this.props.url;
     return (
       <li className="gif-wrap">
-        <img src={url} onClick={()=> window.open(url)} />
+        <img src={url} alt='' onClick={()=> window.open(url)} />
       </li>
     );
   }
