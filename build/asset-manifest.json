@@ -1,13 +1,13 @@
 {
-  "main.css": "/static/css/main.edce91df.chunk.css",
-  "main.js": "/static/js/main.4f5fdc9d.chunk.js",
-  "main.js.map": "/static/js/main.4f5fdc9d.chunk.js.map",
-  "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
-  "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
-  "static/js/2.705836fd.chunk.js": "/static/js/2.705836fd.chunk.js",
-  "static/js/2.705836fd.chunk.js.map": "/static/js/2.705836fd.chunk.js.map",
-  "index.html": "/index.html",
-  "precache-manifest.c8637c104b7baef29ccd347348a2e73b.js": "/precache-manifest.c8637c104b7baef29ccd347348a2e73b.js",
-  "service-worker.js": "/service-worker.js",
-  "static/css/main.edce91df.chunk.css.map": "/static/css/main.edce91df.chunk.css.map"
+  "main.css": "/react-avengers-gallery/static/css/main.edce91df.chunk.css",
+  "main.js": "/react-avengers-gallery/static/js/main.4f5fdc9d.chunk.js",
+  "main.js.map": "/react-avengers-gallery/static/js/main.4f5fdc9d.chunk.js.map",
+  "runtime~main.js": "/react-avengers-gallery/static/js/runtime~main.4e95fb55.js",
+  "runtime~main.js.map": "/react-avengers-gallery/static/js/runtime~main.4e95fb55.js.map",
+  "static/js/2.705836fd.chunk.js": "/react-avengers-gallery/static/js/2.705836fd.chunk.js",
+  "static/js/2.705836fd.chunk.js.map": "/react-avengers-gallery/static/js/2.705836fd.chunk.js.map",
+  "index.html": "/react-avengers-gallery/index.html",
+  "precache-manifest.49079b486a1bd9fa0a6a257f17bee46f.js": "/react-avengers-gallery/precache-manifest.49079b486a1bd9fa0a6a257f17bee46f.js",
+  "service-worker.js": "/react-avengers-gallery/service-worker.js",
+  "static/css/main.edce91df.chunk.css.map": "/react-avengers-gallery/static/css/main.edce91df.chunk.css.map"
 }
